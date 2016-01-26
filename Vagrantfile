@@ -32,6 +32,7 @@ Vagrant.configure(2) do |config|
     chef.cookbooks_path = "~/vagrant/chef/supermarket"
     #chef.roles_path
     chef.add_recipe "java"
+    chef.add_recipe "tomcat_latest"
     #chef.add_role "web"
     chef.json = {
       "java" => {
