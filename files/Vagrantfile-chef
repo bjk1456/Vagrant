@@ -1,0 +1,61 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "allenta/chef.centos-6.5"
+
+  config.vbguest.auto_update = false
+
+  config.vm.provision "file", source: "~/vagrant/files/git-config", destination: "~/.gitconfig"
+
+  config.vm.provision "shell", path: "https://raw.githubusercontent.com/bjk1456/Vagrant/master/scripts/centos-common.sh"
+
+  config.omnibus.chef_version = :latest
+
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = "~/vagrant/chef/supermarket"
+    #chef.roles_path
+    chef.add_recipe "java"
+    chef.add_recipe "tomcat_latest"
+    #chef.add_role "web"
+    chef.json = {
+      "java" => {
+        "jdk_version" => "7"
+      }
+    }
+    end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
+end
