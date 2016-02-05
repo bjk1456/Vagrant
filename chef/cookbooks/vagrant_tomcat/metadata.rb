@@ -1,6 +1,6 @@
 name 'vagrant_tomcat'
 maintainer 'Ben K'
-maintainer_email 'Benjamin.Kelly@windsorlakecomputing'
+maintainer_email 'Benjamin.Kelly@windsorlakecomputing.com'
 license 'Apache 2.0'
 description 'Customizes Tomcat-Latest Cookbook for Vagrant'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
