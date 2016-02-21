@@ -4,11 +4,10 @@
 yum update -y --exclude=kernel
 
 # Tools
-yum install -y nano git unzip screen nc osquery python27
+yum install -y nano git unzip screen nc 
 
-curl -O https://bootstrap.pypa.io/get-pip.py
-sudo python27 get-pip.py
-sudo pip install awscli --ignore-installed six
+sudo rpm -ivh https://osquery-packages.s3.amazonaws.com/centos6/noarch/osquery-s3-centos6-repo-1-0.0.noarch.rpm
+sudo yum install osquery
 
 
 
