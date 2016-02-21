@@ -7,7 +7,7 @@ yum update -y --exclude=kernel
 yum install -y nano git unzip screen nc 
 
 sudo rpm -ivh https://osquery-packages.s3.amazonaws.com/centos6/noarch/osquery-s3-centos6-repo-1-0.0.noarch.rpm
-sudo yum install osquery
+sudo yum install -y osquery
 
 
 
