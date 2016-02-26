@@ -6,12 +6,9 @@ yum update -y
 # Tools
 yum install -y nano git unzip screen nc zlib-devel
 
-sudo rpm -ivh https://osquery-packages.s3.amazonaws.com/centos6/noarch/osquery-s3-centos6-repo-1-0.0.noarch.rpm
-sudo yum install -y osquery
-
 sudo yum groupinstall -y development
 
-sudo yum install -y zlib-devel openssl-devel install centos-release-SCL python27
+sudo yum install -y zlib-devel openssl-devel apt centos-release-SCL python27
 
 scl enable python27 bash
 
