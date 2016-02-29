@@ -22,7 +22,7 @@ cd setuptools-1.4.2
 # Install setuptools using the Python we've installed (2.7.6)
 scl enable python27 - << \EOF
 python2.7 setup.py install
-curl https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py | python2.7 -
+curl https://bootstrap.pypa.io/get-pip.py | python2.7 -
 EOF
 
 
