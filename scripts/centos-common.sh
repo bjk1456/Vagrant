@@ -16,11 +16,13 @@ sudo yum groupinstall -y development
 wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-1.4.2.tar.gz
 # Extract the files from the archive:
 tar -xvf setuptools-1.4.2.tar.gz
+rm setuptools-1.4.2.tar.gz
 # Enter the extracted directory:
 cd setuptools-1.4.2
 # Install setuptools using the Python we've installed (2.7.6)
 scl enable python27 - << \EOF
 python2.7 setup.py install
+curl https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py | python2.7 -
 EOF
 
 
