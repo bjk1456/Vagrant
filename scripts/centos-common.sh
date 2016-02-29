@@ -8,7 +8,7 @@ sudo yum install -y nano git unzip screen nc zlib-devel vim-X11 vim-common vim-e
 # Won't find if not on a separate line
 sudo yum install -y python27
 
-scl enable python27 bash
+
 
 sudo yum groupinstall -y development
 
@@ -19,7 +19,9 @@ tar -xvf setuptools-1.4.2.tar.gz
 # Enter the extracted directory:
 cd setuptools-1.4.2
 # Install setuptools using the Python we've installed (2.7.6)
+scl enable python27 bash  - << \EOF
 python2.7 setup.py install
+EOF
 
 
 
