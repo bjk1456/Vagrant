@@ -3,7 +3,7 @@ user_home = value_for_platform_family(
   "default" => "/home/vagrant"
 )
 
-user "vagrant" do
+user "bjk1456" do
   home user_home
   manage_home true
   shell "/bin/bash"
