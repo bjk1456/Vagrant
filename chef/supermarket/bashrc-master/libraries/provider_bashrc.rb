@@ -139,7 +139,9 @@ class Chef
       end
 
       def repo
-        "fnichol/bashrc"
+        #"fnichol/bashrc"
+         "bjk1456/bashrc"
+
       end
 
       def tar_src
