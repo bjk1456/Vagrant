@@ -7,8 +7,8 @@ end
 template "/etc/init.d/tomcat7" do
 	source "tomcat7.erb"
 	mode "0755"
-	owner "root"
-	group "root"
+	owner "bjk1456"
+	group "bjk1456"
 	notifies :restart, "service[tomcat7]"
 end
 
