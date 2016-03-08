@@ -6,7 +6,7 @@ yum update -y
 # Tools
 sudo yum install -y nano git unzip screen nc zlib-devel vim-X11 vim-common vim-enhanced vim-minimal openssl-devel centos-release-SCL yum-cron 
 # Won't find if not on a separate line
-sudo yum install -y python27
+sudo yum install -y python27 epel-release
 
 
 
