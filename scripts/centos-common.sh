@@ -7,6 +7,8 @@ yum update -y
 sudo yum install -y nano git unzip screen nc zlib-devel vim-X11 vim-common vim-enhanced vim-minimal openssl-devel centos-release-SCL yum-cron 
 # Won't find if not on a separate line
 sudo yum install -y python27 epel-release
+# The option --enablerepo=epel causes yum to search for the packages in the EPEL repository.
+sudo yum install nodejs npm --enablerepo=epel
 
 
 
